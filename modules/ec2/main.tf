@@ -29,7 +29,7 @@ resource "aws_security_group" "sg" {
     description = "All outbound"
     from_port   = 0
     to_port     = 0
-    protocol    = "-1"
+    protocol    = "-1"   # All protocols
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -41,7 +41,8 @@ resource "aws_security_group" "sg" {
 resource "aws_instance" "ec2" {
   ami                    = data.aws_ami.amazon_linux.id
   instance_type          = var.instance_type
-  subnet_id              = var.subnet_id
+  subnet_id              = var.subnet_id     # Availability zone will be inherited from subnet
+  associate_public_ip_address = true
   vpc_security_group_ids = [aws_security_group.sg.id]
 
   tags = {

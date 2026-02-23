@@ -30,3 +30,7 @@ variable "instance_type" {
 variable "security_cidr_blocks" {
   type = list(string)
 }
+
+variable "bucket_prefix" {
+  type = string
+}

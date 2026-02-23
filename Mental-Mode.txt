@@ -1,7 +1,0 @@
-Map → use the key → because the key already identifies things.
-
-List/Set → use the value → because that’s the actual thing you care about.
-
-🧠 Terraform Cheat Sentence
-
-“If it’s a map, grab the key; if it’s a list, grab the value.”

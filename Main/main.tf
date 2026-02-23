@@ -36,3 +36,10 @@ module "ec2" {
   subnet_id            = module.vpc.subnet_id
   security_cidr_blocks = var.security_cidr_blocks
 }
+
+module "s3" {
+  source = "./modules/s3"
+
+  env           = var.env
+  bucket_prefix = var.bucket_prefix
+}
